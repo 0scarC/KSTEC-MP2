@@ -2,6 +2,8 @@
 
 ## Todo List
 - [ ] What is the project going to be about
+- Undetermined
+
 - [ ] Who will work on what
 - Comrade 1 - Name
   - Working on:

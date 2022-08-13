@@ -8,18 +8,22 @@ Aaron Fisher, Julian Bryce Alvir, Oscar Clark
 
 - Github
 ***git pull orign main* to sync local files to main branch, any of your files not overridden by changes to files merged with main branch will remain**
+
 ***git push* to your branch before pulling from main branch to ensure your progress isn't overwritten**
+
 [Github Cheat Sheet] (https://education.github.com/git-cheat-sheet-education.pdf)
 
 - Existing APIs
+
 [ExerciseDB] (https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb?utm_source=youtube.com%2FJavaScriptMastery&utm_medium=referral&utm_campaign-DevRel)
 
 ## Todo List
 - [x] What is the project going to be about
-- Workout Tracker: Site to plan and track workouts, maybe post progress on site
+Workout Tracker: Site to plan and track workouts, maybe post progress on site
 
 - [ ] Home Page
 *Start with what you're comfortable with, expand back-end later*
+
 | Component | Description |
 | :---: | --- |
 | Header | Title, Navbar, (Search?) |
@@ -28,6 +32,7 @@ Aaron Fisher, Julian Bryce Alvir, Oscar Clark
 
 - [ ] Total Workouts Page
 *List of all available workout plans, and option to choose to create Custom plan*
+
 | Component | Description |
 | :---: | --- |
 | Header | See Home Page |
@@ -37,6 +42,7 @@ Aaron Fisher, Julian Bryce Alvir, Oscar Clark
 
 - [ ] Single Workout Page Template
 *Data to be filled by database depending on plan selected*
+
 | Component | Description |
 | :---: | --- |
 | Header | See Home Page |
@@ -46,6 +52,7 @@ Aaron Fisher, Julian Bryce Alvir, Oscar Clark
 
 - [ ] Custom Workout Page Template
 *Data to be filled by user, added to database once complete*
+
 | Component | Description |
 | :---: | --- |
 | Header | See Home Page |

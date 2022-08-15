@@ -12,7 +12,7 @@ import Container from 'react-bootstrap/Container'
 
 function App() {
   
-  const workouts = ['Activate your Crystals', 'Monkey Meditation', 'Soak in the Hotsprings', 'Hypnotherapy', 'Mineral Bath']
+  const workouts = ['Pushups', 'Pullups' ]
 
   return (
     <div className="App">

@@ -1,16 +1,40 @@
 .App {
   text-align: center;
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5) ), url('https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=793&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 150vh
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App h1 {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  margin-top: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+  font-size: 4vw;
+  padding-top: 10px;
+  color: white;
+}
+
+.navBar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navBar li {
+  display: inline;
+  padding: 8px;
+  background-color: #dddddd;
+}
+
+li:hover {
+  background-color: #111;
+}
+
+.homepage {
+  padding-top: 50px;
 }
 
 .App-header {
@@ -24,15 +48,47 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.aboutpage {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 25px;
+  font-size: 1.3vw;
+  font-weight: bold;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.aboutpage img {
+  width: 50%;
+  height: 50%;
+  margin: 0 auto
+}
+
+.aboutpage h1 {
+  border-bottom: 6px white solid;
+  font-size: 5vh;
+}
+
+.packages {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-size: 1.3vw;
+  font-weight: bold;
+  color: white;
+}
+
+.packages h1 {
+  border-bottom: 6px white solid;
+  font-size: 5vh;
+}
+
+.packages ul {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.packages li {
+  font-size: 25px;
+  margin: 20px;
 }

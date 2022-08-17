@@ -17,12 +17,17 @@ mongoose.connect(process.env.MONGO_URI, {
     useUnifiedTopology: true
   });
 
-const connection = mongoose.connection;
-connection.once('open', () => {
-  console.log("MongoDB database connection established successfully");
-})
-
-app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
-});
-
+  const connection = mongoose.connection;
+  connection.once('open', () => {
+    console.log("MongoDB database connection established successfully");
+  })
+  
+  const exercisesRouter = require('./routes/exercises');
+  const usersRouter = require('./routes/users');
+  
+  app.use('/exercises', exercisesRouter);
+  app.use('/users', usersRouter);
+  
+  app.listen(port, () => {
+      console.log(`Server is running on port: ${port}`);
+  });

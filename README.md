@@ -1,7 +1,7 @@
 # Milestone Project 2: Workout Tracker
 
 ### Members
-Aaron Fisher, Julian Bryce Alvir, Oscar Clark
+Aaron Fisher, Julian Bryce Alvir, Oscar Clark, Dane Ehrhorn
 
 ## References
 *Any links for group to look at can be posted here for group access, link design is: [link name] (URL)*

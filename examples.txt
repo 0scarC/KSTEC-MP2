@@ -1,0 +1,17 @@
+Here are some examples of what out format will be or what the screen will look like 
+\
+
+Demo and Formats - 
+
+Exercise Schema: 
+
+{
+type: "resistance",
+        name: "Lateral Pull",
+        duration: 20,
+        weight: 300,
+        reps: 10,
+        sets: 4
+        }
+        
+        

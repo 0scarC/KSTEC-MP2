@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {
   "name": "backend",
   "version": "1.0.0",
@@ -16,3 +17,29 @@
     "mongoose": "^6.5.2"
   }
 }
+=======
+{
+  "name": "kstec-mp2",
+  "version": "1.0.0",
+  "description": "### Members Aaron Fisher, Julian Bryce Alvir, Oscar Clark",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0scarC/KSTEC-MP2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0scarC/KSTEC-MP2/issues"
+  },
+  "homepage": "https://github.com/0scarC/KSTEC-MP2#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "react-router-dom": "^6.3.0"
+  }
+}
+>>>>>>> Stashed changes

@@ -8,6 +8,7 @@ import ExercisesList from "./components/exercises-list";
 import EditExercise from "./components/edit-exercise";
 import CreateExercise from "./components/create-exercise";
 import CreateUser from "./components/create-user";
+import Home from "./components/home"
 
 function App() {
   return (

@@ -1,3 +1,7 @@
+import react , { Component}  from 'react';
+import         { render   }  from 'react-dom';
+xz
+
 export default function CreateUser () {
   return(
       <div className='createUser'>

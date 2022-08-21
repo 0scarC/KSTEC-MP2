@@ -8,10 +8,95 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <title>Workout Tracker</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+<!---- <Fonts> --> 
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;700&display=swap"
+    rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap" rel="stylesheet">
 
-  </body>
-</html>
+
+
+<h3>Initial Paragraph Text </h3>
+<img src="bird.jpg" alt="Bird">
+<h3>lorem ipsum </h3>
+
+
+<h3>What Am I>  </h3>
+<img src="bird.jpg" alt="Bird">
+<h3> A creation of 4 different peoples project at K-State software development course 
+                </h3>
+
+<script src="https://kit.fontawesome.com/3740bd1c16.js" crossorigin="anonymous"></script>
+  </head>
+<!-- <Body> -->
+  <body>
+    <button onclick="topFunction()" id="navbutton" title="Go to top"> To the top!</button>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <h1 class="navbar-brand">
+                  Workout App
+                </h1>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            contact
+                        </a>
+                    </li>
+                </ul>
+                <div class="menu-toggle">
+                    <div class="hamburger">
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="zone2 black" id="section2">
+      <form>
+
+          <p> Birth(year):
+              <input type="number" class="insert" name="birth" id="birth">
+          </p>
+
+          <p> Sex:
+              <input type="radio" class="insert" name="radsex" id="mal" checked>
+              <label class="insert" for="mal">Male</label>
+              <input type="radio" class="insert" name="radsex" id="fem">
+              <label class="insert" for="fem">Female</label>
+
+          </p>
+
+          <p> Height(cm):
+              <input type="number" class="insert" name="height" id="height">
+          </p>
+
+          <p> Weight(kg):
+              <input type="number" class="insert" name="weight" id="weight">
+
+          </p>
+
+          <p> <input type="button" value="Verify BMI" class="verify" onclick="verify()"> </p>
+          <p> <input type="button" value="Reset" onClick="window.location.reload();" class="verify"> </p>
+      </form>
+
+      <div id="res2"> Make sure to fill all with valid data! </div>
+      <div id="res">
+          <hr>
+      </div>
+      <div id="res3"> </div>
+  </section>
+
+<!-- Here's the Scripts Used ;)-->
+  <script src="homepage\src\components\bmiCalc.js"></script>
+
+  <script src="homepage\src\components\script.js"></script>
+</body>
+
+
+</html>w

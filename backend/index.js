@@ -7,7 +7,7 @@ require('dotenv').config();
 
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT //removed || 5000 due to redundancy, port changed to 3000 as 5000 is already in use
 
 app.use(cors());
 app.use(express.json());

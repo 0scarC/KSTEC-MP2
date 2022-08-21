@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 export default function CreateExercise(data) {
-  //refactor workout name in HTML to switch avaiable workouts depending on workout type and area choosen
+  //refactor workoutName into HTML to switch avaiable workouts depending on workout type and area choosen
   let workoutName = ``
   switch (data.type) {
     case 'select':
@@ -53,7 +53,7 @@ export default function CreateExercise(data) {
   }
 
   return(
-      <div className="createExercise">
+      <div className='createExercise'>
           <main>
             <h1>Create an Exercise</h1>
             <form>
@@ -95,12 +95,14 @@ export default function CreateExercise(data) {
                 </div>
                 <div>
                   <div>
-                    <label htmlFor='weight'>Weight</label>
-                    <input id='weight' name='weight' value='user weight divided by number appropriate for workout selected, can be changed in this input'/>
+                    <label htmlFor='weight'>Weight (lbs)</label>
+                    <input id='weight' name='weight' placeholder='150'/>
+                    <p>*user weight divided by number appropriate for workout selected, can be changed in this input*</p>
                   </div>
                   <div>
                     <label htmlFor='reps'>Reps</label>
-                    <input id='reps' name='reps' value='depends on workout type selected, can be changed in this input'/>
+                    <input id='reps' name='reps' placeholder='30'/>
+                    <p>*depends on workout type selected, can be changed in this input*</p>
                   </div>
                 </div>
                 <input type='submit' value='Add Workout'/>

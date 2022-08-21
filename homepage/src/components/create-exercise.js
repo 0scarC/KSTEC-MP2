@@ -1,115 +1,38 @@
-import React, { Component } from 'react';
-
-export default function CreateExercise(data) {
-  //refactor workoutName into HTML to switch avaiable workouts depending on workout type and area choosen
-  let workoutName = ``
-  switch (data.type) {
-    case 'select':
-      workoutName = (
-        <select id='workoutName' name='workoutName'>
-          <option value='select'>Select</option>
-        </select>
-      )
-      break
-    case 'cardio':
-      data.area = 'N/A'
-      workoutName = (
-        <select id='workoutName' name='workoutName'>
-          <option value='walk'>Walk</option>
-          <option value='jog'>Jog</option>
-          <option value='marathon'>Marathon</option>
-        </select>
-      )
-      break
-    case 'endurance':
-    case 'strength':
-      switch (data.area) {
-        case 'core':
-          workoutName = (
-            <select id='workoutName' name='workoutName'>
-              <option value='planks'>Planks</option>
-              <option value='sixInches'>6 Inches</option>
-            </select>
-          )
-          break
-        case 'lower':
-          workoutName = (
-            <select id='workoutName' name='workoutName'>
-              <option value='squats'>Squats</option>
-            </select>
-          )
-          break
-        case 'upper':
-          workoutName = (
-            <select id='workoutName' name='workoutName'>
-              <option value='bench-press'>Bench Press</option>
-              <option value='bicep-curls'>Bicep Curls</option>
-              <option value='overhead-press'>Overhead Press</option>
-            </select>
-          )
-          break
-      }
-      break
-  }
-
+export default function CreateExercise () {
   return(
-      <div className='createExercise'>
-          <main>
-            <h1>Create an Exercise</h1>
-            <form>
-              <fieldset>
-                <div>
-                  <label htmlFor='type'>Workout Type</label>
-                  <select id='type' name='type'>
-                    <option value='select'>Select</option>
-                    <option value='cardio'>Cardio</option>
-                    <option value='endurance'>Endurance</option>
-                    <option value='strength'>Strength</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor='area'>Muscle Area</label>
-                  <select id='area' name='area'>
-                    <option value='select'>Select</option>
-                    <option value='N/A'>N/A</option>
-                    <option value='upper'>Upper Body</option>
-                    <option value='lower'>Lower Body</option>
-                    <option value='core'>Core</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor='workoutName'>Workout</label>
-                  {workoutName}
-                  <select id='workoutName' name='workoutName'>
-                    <option value='select'>Select</option>
-                    <option value='walk'>Walk</option>
-                    <option value='jog'>Jog</option>
-                    <option value='marathon'>Marathon</option>
-                    <option value='planks'>Planks</option>
-                    <option value='sixInches'>6 Inches</option>
-                    <option value='squats'>Squats</option>
-                    <option value='bench-press'>Bench Press</option>
-                    <option value='bicep-curls'>Bicep Curls</option>
-                    <option value='overhead-press'>Overhead Press</option>
-                  </select>
-                </div>
-                <div>
-                  <div>
-                    <label htmlFor='weight'>Weight (lbs)</label>
-                    <input id='weight' name='weight' placeholder='150'/>
-                    <p>*user weight divided by number appropriate for workout selected, can be changed in this input*</p>
-                  </div>
-                  <div>
-                    <label htmlFor='reps'>Reps</label>
-                    <input id='reps' name='reps' placeholder='30'/>
-                    <p>*depends on workout type selected, can be changed in this input*</p>
-                  </div>
-                </div>
-                <input type='submit' value='Add Workout'/>
-              </fieldset>
-            </form>
-          </main>
+      <div className="createExercise">
+          <h1>Create an Exercise</h1>
+          <div>
+          <form>
+            <fieldset>
+              <div>
+                <label htmlFor='username'>Enter Username</label>
+                <input id='username' name='username' placeholder='i.e. John123'/>
+              </div>
+              <div>
+                  <label htmlFor='type'>Enter Type of Workout</label>
+                  <input id='type' name='type' placeholder='150'/>
+              </div>
+              <div>
+                  <label htmlfor='area'>Enter Body Area</label>
+                  <input id='area' name='area' placeholder='70'/>
+              </div>
+              <div>
+                  <label htmlfor='workoutName'>Enter Name of Workout</label>
+                  <input id='workoutName' name='workoutName' placeholder='70'/>
+              </div>
+              <div>
+                  <label htmlfor='weight'>Enter Weight (lbs)</label>
+                  <input id='weight' name='weight' placeholder='70'/>
+              </div>
+              <div>
+                  <label htmlfor='reps'>Enter number of reps</label>
+                  <input id='reps' name='reps' placeholder='70'/>
+              </div>
+              <input type='submit' value='Add Exercise'/>
+            </fieldset>
+          </form>
+          </div>
       </div>
   )
-
 }

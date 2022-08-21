@@ -20,7 +20,14 @@ const exerciseSchema = new Schema({
     max: [100, `Think you're better than One Punch Man, huh? Rep limit is 100.`],
     default: 0,
     required: true
-  }
+  },
+  sets: {
+    type: Number,
+    min: [1, 'Have to do at least 1 set.'],
+    max: [10, 'Let us keep it realistic, okay? Max of 10 sets.'],
+    default: 1,
+    required: true
+  },
 }, {
   timestamps: true,
 });

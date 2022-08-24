@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+/*const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
@@ -23,6 +23,28 @@ const userSchema = new Schema({
     max: [96, `Might be a little too big to be lifting safely, maybe use a more specialized workout app. Maximum height is 96 in (8 ft).`],
     required: true
   }
+}, {
+  timestamps: true,
+});
+
+const User = mongoose.model('User', userSchema);
+
+module.exports = User; 
+*/
+
+
+const mongoose = require('mongoose');
+
+const Schema = mongoose.Schema;
+
+const userSchema = new Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+    trim: true,
+    minlength: 4
+  },
 }, {
   timestamps: true,
 });

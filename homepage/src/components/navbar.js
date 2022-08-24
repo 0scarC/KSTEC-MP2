@@ -13,7 +13,7 @@ export default function Navbar () {
       <Link to="/create" className="nav-link">Create an Exercise</Link>
       </li>
       <li className="navbar-item">
-      <Link to="/edit" className="nav-link">Edit an Exercise</Link>
+      <Link to="/edit/:id" className="nav-link">Edit an Exercise</Link>
       </li>
       <li className="navbar-item">
       <Link to="/user" className="nav-link">Create a User</Link>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Banner from '../images/workout.jpg'
 
 const Exercise = props => (
   <tr>
@@ -56,6 +57,7 @@ export default class ExercisesList extends Component {
     return (
       <div>
         <h3>Logged Exercises</h3>
+        <img src={Banner} alt='banner' width='100%'></img>
         <table className="table">
           <thead className="thead-light">
             <tr>

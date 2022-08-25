@@ -3,6 +3,7 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
+
 export default class EditExercise extends Component {
   constructor(props) {
     super(props);
@@ -14,8 +15,8 @@ export default class EditExercise extends Component {
     this.onChangeWeight = this.onChangeWeight.bind(this);
     this.onChangeReps = this.onChangeReps.bind(this);
     this.onChangeSets = this.onChangeSets.bind(this);
-    this.onChangeDate = this.onChangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onChangeDate = this.onChangeDate.bind(this);
 
     this.state = {
       username: '',
@@ -31,7 +32,6 @@ export default class EditExercise extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.exercise.id);
     axios.get('http://localhost:5000/exercises/' + this.props.match.params.id)
       .then(response => {
         this.setState({

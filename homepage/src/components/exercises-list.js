@@ -59,7 +59,7 @@ export default class ExercisesList extends Component {
        <div>
         <div class="container">
           <img src={Banner} alt='banner' width='100%'></img>
-          <div class="centered">Workout History</div>
+          <div class="centered">Workout Tracker</div>
           <p class="bannertext">The grind never stops.</p>
         </div>
         <table className="table">

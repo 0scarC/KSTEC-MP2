@@ -45,9 +45,10 @@ export default class CreateUser extends Component {
           <div class="centered">Create A New User</div>
           <p class="bannertext">Start keeping track of your workouts.</p>
         </div>
+        <container className="container1">
         <form onSubmit={this.onSubmit}>
           <div className="form-group"> 
-            <label>Username: </label>
+            <label className='username'>Enter Username: </label>
             <input  type="text"
                 required
                 className="form-control"
@@ -59,6 +60,7 @@ export default class CreateUser extends Component {
             <input type="submit" value="Create User" className="btn btn-dark" />
           </div>
         </form>
+        </container>
       </div>
     )
   }

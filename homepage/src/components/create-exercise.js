@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import Deadlift from '../images/deadlift.jpg'
 
 export default class CreateExercise extends Component {
   constructor(props) {
@@ -118,7 +119,13 @@ export default class CreateExercise extends Component {
   render() {
     return (
     <div>
-      <h2>Log a New Exercise</h2>
+
+<div class="container">
+          <img src={Deadlift} alt='banner' width='100%'></img>
+          <div class="centered">Log a New Exercise</div>
+          <p class="bannertext">Share your journey.</p>
+        </div>
+      <h2>New Exercise Form</h2>
       <form onSubmit={this.onSubmit}>
         <div className="form-group"> 
           <label>Username: </label>

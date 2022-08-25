@@ -30,7 +30,7 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3em;
+  font-size: 4em;
   padding: 10px 0;
   font-weight: 800;
   margin: 0;
@@ -58,7 +58,8 @@ label{
 }
 
 .table {
-  background-color: #D3D3D3;
+  
+  background-color: #B2D0B7;
   border-radius: 15px;
   margin: 10px;
 }
@@ -66,5 +67,19 @@ label{
 h2 {
   color: black;
   font-style: arial;
-  font-size: 3em;
+  font-size: 2em;
+}
+
+.container1 {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 0;
+  margin: 0;
+  font-family: 'arial';
+
+}
+.username {
+  color: white;
 }

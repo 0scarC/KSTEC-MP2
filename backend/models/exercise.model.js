@@ -28,7 +28,9 @@ const exerciseSchema = new Schema({
     default: 1,
     required: true
   },
-}, {
+  date: { type: Date, required: true },
+},
+ {
   timestamps: true,
 });
 

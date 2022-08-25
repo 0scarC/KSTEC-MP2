@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+
 
 export default class EditExercise extends Component {
   constructor(props) {
@@ -13,6 +16,7 @@ export default class EditExercise extends Component {
     this.onChangeReps = this.onChangeReps.bind(this);
     this.onChangeSets = this.onChangeSets.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onChangeDate = this.onChangeDate.bind(this);
 
     this.state = {
       username: '',
@@ -22,12 +26,12 @@ export default class EditExercise extends Component {
       weight: '',
       reps: '',
       sets: '',
+      date: new Date(),
       users: []
     }
   }
 
   componentDidMount() {
-    console.log(this.props.exercise.id);
     axios.get('http://localhost:5000/exercises/' + this.props.match.params.id)
       .then(response => {
         this.setState({
@@ -37,7 +41,8 @@ export default class EditExercise extends Component {
           workoutName: response.data.workoutName,
           weight: response.data.weight,
           reps: response.data.reps,
-          sets: response.data.sets
+          sets: response.data.sets,
+          date: new Date(response.data.date)
           
         })   
       })
@@ -101,6 +106,12 @@ export default class EditExercise extends Component {
     })
   }
 
+  onChangeDate(date) {
+    this.setState({
+      date: date
+    })
+  }
+
   onSubmit(e) {
     e.preventDefault();
 
@@ -112,6 +123,7 @@ export default class EditExercise extends Component {
       weight: this.state.weight,
       reps: this.state.reps,
       sets: this.state.sets,
+      date: this.state.date,
     }
 
     console.log(exercise);
@@ -198,6 +210,15 @@ export default class EditExercise extends Component {
               value={this.state.sets}
               onChange={this.onChangeSets}
               />
+        </div>
+        <div className="form-group">
+          <label>Date: </label>
+          <div>
+            <DatePicker
+              selected={this.state.date}
+              onChange={this.onChangeDate}
+            />
+          </div>
         </div>
 
         <div className="form-group">

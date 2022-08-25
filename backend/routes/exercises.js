@@ -15,6 +15,7 @@ router.route('/add').post((req, res) => {
   const weight = Number(req.body.weight);
   const reps = Number(req.body.reps);
   const sets = Number(req.body.sets);
+  const date = Date.parse(req.body.date);
 
   const newExercise = new Exercise({
     username,
@@ -23,7 +24,8 @@ router.route('/add').post((req, res) => {
     workoutName,
     weight,
     reps,
-    sets
+    sets,
+    date
   });
 
   newExercise.save()
@@ -53,6 +55,7 @@ router.route('/update/:id').post((req, res) => {
       exercise.weight = Number(req.body.weight);
       exercise.reps = Number(req.body.reps);
       exercise.sets = Number(req.body.reps);
+      exercise.date = Date.parse(req.body.date);
 
       exercise.save()
         .then(() => res.json('Exercise updated!'))

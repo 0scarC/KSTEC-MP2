@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import BuffGuy from '../images/user.jpg'
+import BuffGuy from '../images/workout.jpg'
 
 export default class CreateUser extends Component {
   constructor(props) {
@@ -40,11 +40,15 @@ export default class CreateUser extends Component {
   render() {
     return (
       <div>
-        <h3>Create New User</h3>
-        <img src={BuffGuy} alt='banner' width='100%'></img>
+        <div class="container">
+          <img src={BuffGuy} alt='banner' width='100%'></img>
+          <div class="centered">Create A New User</div>
+          <p class="bannertext">Start keeping track of your workouts.</p>
+        </div>
+        <container className="container1">
         <form onSubmit={this.onSubmit}>
           <div className="form-group"> 
-            <label>Username: </label>
+            <label className='username'>Enter Username: </label>
             <input  type="text"
                 required
                 className="form-control"
@@ -53,9 +57,10 @@ export default class CreateUser extends Component {
                 />
           </div>
           <div className="form-group">
-            <input type="submit" value="Create User" className="btn btn-primary" />
+            <input type="submit" value="Create User" className="btn btn-dark" />
           </div>
         </form>
+        </container>
       </div>
     )
   }

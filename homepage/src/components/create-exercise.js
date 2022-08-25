@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+import Deadlift from '../images/deadlift.jpg'
 
 export default class CreateExercise extends Component {
   constructor(props) {
@@ -13,6 +16,7 @@ export default class CreateExercise extends Component {
     this.onChangeReps = this.onChangeReps.bind(this);
     this.onChangeSets = this.onChangeSets.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onChangeDate = this.onChangeDate.bind(this);
 
     this.state = {
       username: '',
@@ -22,6 +26,7 @@ export default class CreateExercise extends Component {
       weight: '',
       reps: '',
       sets: '',
+      date: new Date(),
       users: []
     }
   }
@@ -83,6 +88,12 @@ export default class CreateExercise extends Component {
     })
   }
 
+  onChangeDate(date) {
+    this.setState({
+      date: date
+    })
+  }
+
   onSubmit(e) {
     e.preventDefault();
 
@@ -90,10 +101,11 @@ export default class CreateExercise extends Component {
       username: this.state.username,
       type: this.state.type,
       area: this.state.area,
-      workoutName: this.state.type,
+      workoutName: this.state.workoutName,
       weight: this.state.weight,
       reps: this.state.reps,
       sets: this.state.sets,
+      date: this.state.date,
     }
 
     console.log(exercise);
@@ -107,7 +119,13 @@ export default class CreateExercise extends Component {
   render() {
     return (
     <div>
-      <h3>Create New Exercise</h3>
+
+<div class="container">
+          <img src={Deadlift} alt='banner' width='100%'></img>
+          <div class="centered">Log a New Exercise</div>
+          <p class="bannertext">Share your journey.</p>
+        </div>
+      <h2>New Exercise Form</h2>
       <form onSubmit={this.onSubmit}>
         <div className="form-group"> 
           <label>Username: </label>
@@ -135,6 +153,8 @@ export default class CreateExercise extends Component {
               onChange={this.onChangeType}
               />
         </div>
+
+        
         <div className="form-group">
           <label>Area: </label>
           <input 
@@ -180,9 +200,18 @@ export default class CreateExercise extends Component {
               onChange={this.onChangeSets}
               />
         </div>
+        <div className="form-group">
+          <label>Date: </label>
+          <div>
+            <DatePicker
+              selected={this.state.date}
+              onChange={this.onChangeDate}
+            />
+          </div>
+        </div>
 
         <div className="form-group">
-          <input type="submit" value="Create New Exercise" className="btn btn-primary" />
+          <input type="submit" value="Save Your Exercise" className="btn btn-dark" />
         </div>
       </form>
     </div>

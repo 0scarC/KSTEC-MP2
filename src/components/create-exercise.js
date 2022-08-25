@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import Deadlift from '../images/deadlift.jpg'
 
+const port = process.env.PORT
 
-export default class EditExercise extends Component {
+export default class CreateExercise extends Component {
   constructor(props) {
     super(props);
 
@@ -32,30 +34,12 @@ export default class EditExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/exercises/' + this.props.match.params.id)
-      .then(response => {
-        this.setState({
-          username: response.data.username,
-          type: response.data.type,
-          area: response.data.area,
-          workoutName: response.data.workoutName,
-          weight: response.data.weight,
-          reps: response.data.reps,
-          sets: response.data.sets,
-          date: new Date(response.data.date)
-          
-        })   
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
-
-
-    axios.get('http://localhost:5000/users/')
+    axios.get(`http://localhost:${port}/users/`)
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
             users: response.data.map(user => user.username),
+            username: response.data[0].username
           })
         }
       })
@@ -128,17 +112,22 @@ export default class EditExercise extends Component {
 
     console.log(exercise);
 
-    axios.post('http://localhost:5000/exercises/update/' + this.props.match.params.id, exercise)
+    axios.post(`http://localhost:${port}/exercises/add`, exercise)
       .then(res => console.log(res.data));
 
     window.location = '/';
   }
-  
 
   render() {
     return (
     <div>
-      <h3>Edit an Exercise</h3>
+
+<div className="container">
+          <img src={Deadlift} alt='banner' width='100%'></img>
+          <div className="centered">Log a New Exercise</div>
+          <p className="bannertext">Share your journey.</p>
+        </div>
+      <h2>New Exercise Form</h2>
       <form onSubmit={this.onSubmit}>
         <div className="form-group"> 
           <label>Username: </label>
@@ -166,6 +155,8 @@ export default class EditExercise extends Component {
               onChange={this.onChangeType}
               />
         </div>
+
+        
         <div className="form-group">
           <label>Area: </label>
           <input 
@@ -222,7 +213,7 @@ export default class EditExercise extends Component {
         </div>
 
         <div className="form-group">
-          <input type="submit" value="Edit an Exercise" className="btn btn-primary" />
+          <input type="submit" value="Save Your Exercise" className="btn btn-dark" />
         </div>
       </form>
     </div>

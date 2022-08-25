@@ -2,9 +2,23 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import Deadlift from '../images/deadlift.jpg'
 
-export default class CreateExercise extends Component {
+const port = process.env.PORT
+
+const Exercise = props => (
+  <tr>
+    <td>{props.exercise.username}</td>
+    <td>{props.exercise.type}</td>
+    <td>{props.exercise.area}</td>
+    <td>{props.exercise.workoutName}</td>
+    <td>{props.exercise.weight}</td>
+    <td>{props.exercise.reps}</td>
+    <td>{props.exercise.sets}</td>
+    <td>{props.exercise.date}</td>
+  </tr>
+)
+
+export default class EditExercise extends Component {
   constructor(props) {
     super(props);
 
@@ -31,13 +45,32 @@ export default class CreateExercise extends Component {
     }
   }
 
-  componentDidMount() {
-    axios.get('http://localhost:5000/users/')
+  componentDidMount(id) {
+    console.log(Exercise)
+    axios.get(`http://localhost:${port}/exercises/${this.props.match.params.id}`)
+      .then(response => {
+        this.setState({
+          username: response.data.username,
+          type: response.data.type,
+          area: response.data.area,
+          workoutName: response.data.workoutName,
+          weight: response.data.weight,
+          reps: response.data.reps,
+          sets: response.data.sets,
+          date: new Date(response.data.date)
+          
+        })   
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+
+
+    axios.get(`http://localhost:${port}/users/`)
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
             users: response.data.map(user => user.username),
-            username: response.data[0].username
           })
         }
       })
@@ -110,22 +143,17 @@ export default class CreateExercise extends Component {
 
     console.log(exercise);
 
-    axios.post('http://localhost:5000/exercises/add', exercise)
+    axios.post(`http://localhost:${port}/exercises/update/${this.props.match.params.id}`, exercise)
       .then(res => console.log(res.data));
 
     window.location = '/';
   }
+  
 
   render() {
     return (
     <div>
-
-<div class="container">
-          <img src={Deadlift} alt='banner' width='100%'></img>
-          <div class="centered">Log a New Exercise</div>
-          <p class="bannertext">Share your journey.</p>
-        </div>
-      <h2>New Exercise Form</h2>
+      <h3>Edit an Exercise</h3>
       <form onSubmit={this.onSubmit}>
         <div className="form-group"> 
           <label>Username: </label>
@@ -153,8 +181,6 @@ export default class CreateExercise extends Component {
               onChange={this.onChangeType}
               />
         </div>
-
-        
         <div className="form-group">
           <label>Area: </label>
           <input 
@@ -211,7 +237,7 @@ export default class CreateExercise extends Component {
         </div>
 
         <div className="form-group">
-          <input type="submit" value="Save Your Exercise" className="btn btn-dark" />
+          <input type="submit" value="Edit an Exercise" className="btn btn-primary" />
         </div>
       </form>
     </div>

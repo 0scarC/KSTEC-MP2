@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Banner from '../images/user.jpg'
 
+const port = process.env.PORT
+
 const Exercise = props => (
   <tr>
     <td>{props.exercise.username}</td>
@@ -30,17 +32,19 @@ export default class ExercisesList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/exercises/')
+    axios.get(`http://localhost:${port}/exercises`)
       .then(response => {
+        console.log('Exercises reached')
         this.setState({ exercises: response.data })
       })
       .catch((error) => {
+        console.log('Exercises error')
         console.log(error);
       })
   }
 
   deleteExercise(id) {
-    axios.delete('http://localhost:5000/exercises/'+id)
+    axios.delete(`http://localhost:${port}/exercises/${id}`)
       .then(response => { console.log(response.data)});
 
     this.setState({
@@ -49,18 +53,18 @@ export default class ExercisesList extends Component {
   }
 
   exerciseList() {
-    return this.state.exercises.map(currentexercise => {
-      return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id}/>;
+    return this.state.exercises.map(currentExercise => {
+      return <Exercise exercise={currentExercise} deleteExercise={this.deleteExercise} key={currentExercise._id}/>;
     })
   }
 
   render() {
     return (
        <div>
-        <div class="container">
+        <div className="container">
           <img src={Banner} alt='banner' width='100%'></img>
-          <div class="centered">Workout Tracker</div>
-          <p class="bannertext">The grind never stops.</p>
+          <div className="centered">Workout Tracker</div>
+          <p className="bannertext">The grind never stops.</p>
         </div>
         <table className="table">
           <thead className="thead-light">

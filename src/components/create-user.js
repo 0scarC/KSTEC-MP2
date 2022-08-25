@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import BuffGuy from '../images/workout.jpg'
 
+const port = process.env.PORT
+
 export default class CreateUser extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +31,7 @@ export default class CreateUser extends Component {
 
     console.log(user);
 
-    axios.post('http://localhost:5000/users/add', user)
+    axios.post(`http://localhost:${port}/users/add`, user)
       .then(res => console.log(res.data));
 
     this.setState({
@@ -40,12 +42,12 @@ export default class CreateUser extends Component {
   render() {
     return (
       <div>
-        <div class="container">
+        <div className="container">
           <img src={BuffGuy} alt='banner' width='100%'></img>
-          <div class="centered">Create A New User</div>
-          <p class="bannertext">Start keeping track of your workouts.</p>
+          <div className="centered">Create A New User</div>
+          <p className="bannertext">Start keeping track of your workouts.</p>
         </div>
-        <container className="container1">
+        <fieldset className="container1">
         <form onSubmit={this.onSubmit}>
           <div className="form-group"> 
             <label className='username'>Enter Username: </label>
@@ -60,7 +62,7 @@ export default class CreateUser extends Component {
             <input type="submit" value="Create User" className="btn btn-dark" />
           </div>
         </form>
-        </container>
+        </fieldset>
       </div>
     )
   }

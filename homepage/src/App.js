@@ -1,6 +1,7 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import './App.css';
 
 
 import Navbar from "./components/navbar"
@@ -23,7 +24,6 @@ function App() {
       </Routes>
       </div>
     </Router>
-
 
   );
 }

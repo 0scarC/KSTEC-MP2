@@ -1,59 +1,70 @@
-.App {
+ body {
+  background-color: white;
+  padding: 20px;
+  font-family: Arial;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  padding: 10px;
+  border-radius: 15px;
+  font-family: arial;
+  font-size: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+img {
+  border-radius: 15px;
+  width: stretch;
+  max-height: 800px;
+}
+
+
+.container {
+  position: relative;
+  text-align: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  padding: 10px 0;
+  font-weight: 800;
+  margin: 0;
+  font-family: 'arial';
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bannertext {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  padding: 10px 0;
+  font-weight: 500;
+  margin-top: 60px;
+  font-family: 'arial';
 }
 
-/* Carousel styling */
-
-.navbar {
-  margin-bottom: 0;
-  border-radius: 0;
+label{ 
+  color: black;
 }
 
-/* Add a gray background color and some padding to the footer */
-footer {
-  background-color: #f2f2f2;
-  padding: 25px;
+.btn {
+  margin: 10px;
 }
 
-.carousel-inner img {
-  width: 100%; /* Set width to 100% */
-  margin: auto;
-  min-height:200px;
+.table {
+  background-color: #D3D3D3;
+  border-radius: 15px;
+  margin: 10px;
 }
 
-/* Hide the carousel text when the screen is less than 600 pixels wide */
-@media (max-width: 600px) {
-.carousel-caption {
-  display: none; 
-}
+h2 {
+  color: black;
+  font-style: arial;
+  font-size: 3em;
 }

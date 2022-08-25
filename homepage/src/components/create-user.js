@@ -40,8 +40,11 @@ export default class CreateUser extends Component {
   render() {
     return (
       <div>
-        <h3>Create New User</h3>
-        <img src={BuffGuy} alt='banner' width='100%'></img>
+        <div class="container">
+          <img src={BuffGuy} alt='banner' width='100%'></img>
+          <div class="centered">Create A New User</div>
+          <p class="bannertext">Start keeping track of your workouts.</p>
+        </div>
         <form onSubmit={this.onSubmit}>
           <div className="form-group"> 
             <label>Username: </label>
@@ -53,7 +56,7 @@ export default class CreateUser extends Component {
                 />
           </div>
           <div className="form-group">
-            <input type="submit" value="Create User" className="btn btn-primary" />
+            <input type="submit" value="Create User" className="btn btn-dark" />
           </div>
         </form>
       </div>

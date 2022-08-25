@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Banner from '../images/workout.jpg'
+import Banner from '../images/user.jpg'
 
 const Exercise = props => (
   <tr>

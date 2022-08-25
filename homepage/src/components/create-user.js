@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import BuffGuy from '../images/user.jpg'
+import BuffGuy from '../images/workout.jpg'
 
 export default class CreateUser extends Component {
   constructor(props) {
